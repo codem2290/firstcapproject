@@ -11,7 +11,7 @@ class BooksODataService extends cds.ApplicationService {
                     req.reject({
                         status: 400,
                         target: 'email',
-                        message: 'Please enter correct email address'
+                        message: 'Please enter correct email address' // Warning message
                     });
                 }
             }
