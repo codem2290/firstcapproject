@@ -5,7 +5,7 @@ class BooksODataService extends cds.ApplicationService {
         this.before('UPDATE', Employees.drafts, (req) => {
             debugger;
             if(req.data?.email){
-                let regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                let regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; //Regular expression
                 let val = regex.test(req.data?.email);
                 if(!val){
                     req.reject({
