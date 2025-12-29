@@ -1,0 +1,69 @@
+
+### Read Employee or Manager Data
+GET http://localhost:4004/odata/v4/books-odata/Employees
+
+### Read Employee or Manager Data
+GET http://localhost:4004/odata/v4/books-odata/Manager
+
+### Create New Employee or Manager
+POST http://localhost:4004/odata/v4/books-odata/Employees
+Content-Type: application/json
+
+{
+    "name"        : "Alex Doe",
+    "address"     : "Street 25, East US",
+    "email"       : "Alex@gmail.com",
+    "country"     : "US",
+    "city"        : "NY",
+    "designation" : "Consultant",
+    "department"  : "Development",
+    "salary"      : 45000
+}
+
+### Delete Data
+DELETE http://localhost:4004/odata/v4/books-odata/Employees('21f041d8-4189-44fe-949d-83f66973ef71')
+
+
+### Update Data
+PUT http://localhost:4004/odata/v4/books-odata/Employees('0c7acc77-319e-4222-9d03-8a04a8b09bc7')
+Content-Type: application/json
+
+{
+    
+    "country"     : "Australia",
+    "city"        : "Capetwon"    
+}
+
+
+### Create New Manager
+POST http://localhost:4004/odata/v4/books-odata/Manager
+Content-Type: application/json
+
+{
+    "name"        : "Alex Doe",
+    "address"     : "Street 25, East US",
+    "email"       : "Alex@gmail.com",
+    "country"     : "US",
+    "city"        : "NY",
+    "designation" : "Consultant",
+    "department"  : "Development",
+    "employees": [{
+        "name"        : "Alex Doe",
+        "address"     : "Street 25, East US",
+        "email"       : "Alex@gmail.com",
+        "country"     : "US",
+        "city"        : "NY",
+        "designation" : "Consultant",
+        "department"  : "Development",
+        "salary"      : 45000
+    },{
+        "name"        : "John",
+        "address"     : "Street 25, East US",
+        "email"       : "John@gmail.com",
+        "country"     : "US",
+        "city"        : "NY",
+        "designation" : "Consultant",
+        "department"  : "Development",
+        "salary"      : 95000
+    }]
+}
