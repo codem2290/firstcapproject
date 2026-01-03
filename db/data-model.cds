@@ -21,6 +21,7 @@ entity Employees : cuid, managed {
     manager       : Association to Manager;
     familyMembers : Composition of many FamilyMembers
                         on familyMembers.employee = $self;
+    status        : String;
 }
 
 entity Manager : cuid, managed {

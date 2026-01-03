@@ -140,6 +140,22 @@
                     "route": "Employees_familyMembersObjectPage"
                   }
                 }
+              },
+              "content": {
+                "header": {
+                  "actions": {
+                    "customAction": {
+                      "press": "com.demo.employee.empmanageapp.ext.controller.ActionHandler.onUpdateStatus",
+                      "visible": "{= !${ui>/isEditable}}",
+                      "enabled": true,
+                      "text": "Update Status",
+                      "position": {
+                        "placement": "Before",
+                        "anchor": "EditAction"
+                      }
+                    }
+                  }
+                }
               }
             }
           }

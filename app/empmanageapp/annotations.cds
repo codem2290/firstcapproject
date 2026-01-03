@@ -108,6 +108,11 @@ annotate service.Employees with @(
                 $Type : 'UI.DataField',
                 Value : designation_code,
             },
+            {
+                $Type : 'UI.DataField',
+                Value : status,
+                Label : 'Status',
+            },
         ],
     },
     UI.FieldGroup #i18nManagerDetails : {
@@ -309,4 +314,8 @@ annotate service.FamilyMembers with @(
         ],
     },
 );
+
+annotate service.Employees with {
+    status @Common.FieldControl : #ReadOnly
+};
 
