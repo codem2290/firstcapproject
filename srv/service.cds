@@ -6,4 +6,6 @@ service BooksODataService {
     entity Manager     as projection on model.Manager;
     entity Designation as projection on model.Designation;
     entity Departments as projection on model.Departments;
+
+    action setEmployeeStatus(empID: String) returns String;
 }
