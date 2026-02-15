@@ -42,7 +42,7 @@ class BooksODataService extends cds.ApplicationService {
 
         this.on('getValueHelpData', async (req) => {
             let dbquery = `Call "BASICPRODE"( DEPARTMENT_DATA=>?, DESIGNATION_DATA=>? )`;
-            let data = await cds.run(dbquery);
+            let data = await cds.run(dbquery); // Get query 
             if(data){
                 let result = {
                     departmentArray: data.DEPARTMENT_DATA,
