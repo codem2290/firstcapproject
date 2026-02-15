@@ -17,11 +17,24 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/books-odata/",
+        "uri": "odata/v4/books-odata/",
         "type": "OData",
         "settings": {
           "annotations": [],
           "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "empmanageapp-display": {
+          "semanticObject": "empmanageapp",
+          "action": "display",
+          "title": "Employee App",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
@@ -177,5 +190,9 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "firstcapproject.service"
   }
 }

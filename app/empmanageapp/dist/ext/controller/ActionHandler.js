@@ -1,0 +1,2 @@
+sap.ui.define(["sap/m/MessageToast"],function(e){"use strict";return{onUpdateStatus:function(e,t){var s="setEmployeeStatus";var a={model:this.getModel(),parameterValues:[{name:"empID",value:e.getObject().ID}],skipParameterDialog:true};this.editFlow.invokeAction(s,a).then(function(e){this._controller.getExtensionAPI().refresh()}.bind(this))}}});
+//# sourceMappingURL=ActionHandler.js.map

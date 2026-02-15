@@ -7,7 +7,11 @@
     "@sap/cds": "^9",
     "@sap/hana-client": "^2.27.19",
     "express": "^4",
-    "hdb": "^2.26.4"
+    "hdb": "^2.26.4",
+    "@sap/xssec": "^4",
+    "@sap-cloud-sdk/connectivity": "^4",
+    "@sap-cloud-sdk/http-client": "^4",
+    "@sap-cloud-sdk/resilience": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
@@ -22,12 +26,43 @@
   "private": true,
   "cds": {
     "requires": {
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "employeeTester@tester.sap.com": {
+              "password": "12345",
+              "roles": [
+                "employee"
+              ]
+            },
+            "adminTester@tester.sap.com": {
+              "password": "12345",
+              "roles": [
+                "manager"
+              ]
+            }
+          }
+        }
+      },
       "db": {
         "kind": "hana"
       },
       "[production]": {
         "db": {
           "kind": "hana"
+        },
+        "auth": "xsuaa"
+      },
+      "destinations": true,
+      "html5-repo": true,
+      "workzone": true,
+      "SDHeaderService": {
+        "kind": "odata-v2",
+        "model": "srv/external/SDHeaderService",
+        "credentials": {
+          "destination": "s4hana",
+          "path": "/sap/opu/odata/SAP/ZSRVIC_ODATA_SRV/"
         }
       }
     },
